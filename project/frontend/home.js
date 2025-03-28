@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const bookAuthorInput = document.getElementById("bookAuthor");
     const modalAddButton = document.getElementById("modalAddButton");
     const discardButton = document.getElementById("discardButton");
-    // const currentlyReadingSection = document.getElementById("currently-reading");
     const addBookButton = document.getElementById("addButton");
 
     addBookButton.addEventListener("click", () => {
