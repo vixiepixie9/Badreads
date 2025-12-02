@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Badreads</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Badreads</title>
+
+  <style>
+    .bg-b0 { background-color: #eae3df !important; }
+    .bg-b1 { background-color: #C0672C !important; }
+    .bg-b2 { background-color: #965F3B !important; }
+    .bg-b3 { background-color: #EB660E !important; }
+    .bg-b4 { background-color: #6B4F3C !important; }
+    .bg-b5 { background-color: #41362F !important; }
+    .bg-b6 { background-color: #33302E !important; }
+
+    
+    .text-b0 { color: #eae3df !important; }
+    .text-b1 { color: #C0672C !important; }
+    .text-b2 { color: #965F3B !important; }
+    .text-b3 { color: #EB660E !important; }
+    .text-b4 { color: #6B4F3C !important; }
+    .text-b5 { color: #41362F !important; }
+    .text-b6 { color: #33302E !important; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      background: url('images/books2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .vignette {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 70%);
+      z-index: 1;
+    }
+
+    .signin-link {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      text-decoration: none;
+      z-index: 10;
+    }
+
+    .btn-hover:hover {
+        background-color: #33302E !important;
+        color: #C0672C !important;
+    }
+
+    .btn-sign-in-hover:hover {
+        color: #C0672C !important;
+    }
+
+  </style>
 </head>
-<body>
-    <div class="vignette"></div>
-    <a href="signin.html" class="signin-link">Sign in</a>
-    <div class="content">
-        <h1>Badreads</h1>
-        <p>A place where bad books find their voice.</p>
-        <a href="signup.html" class="signup-button">Sign up</a>
-    </div>
+<body class="min-vh-100 d-flex justify-content-center align-items-center">
+
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <img src="images/books2.jpg" class="w-100 h-100 object-fit-cover" alt="Books background">
+    <div class="vignette w-100 h-100"></div>
+    <a href="signin.html" class="signin-link text-b1 fw-semibold btn-sign-in-hover">Sign In</a>
+  </div>
+
+  <div class="container text-center text-md-start position-relative z-3">
+    <h1 class="display-4 mb-3 text-b0 fw-bold">Badreads</h1>
+    <p class="fs-5 mb-4 text-b0">A place where bad books find their voice.</p>
+    <a href="signup.html" class="btn bg-b1 text-b0 fw-semibold btn-hover">Sign Up</a>
+  </div>
+
 </body>
 </html>

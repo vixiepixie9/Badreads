@@ -1,277 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage - Badreads</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="home.css">
+  <style>
+    body {
+      background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+      min-height: 100vh;
+    }
+
+    /* CSS класове за HTML */
+    .bg-b0 {
+      background-color: #eae3df
+    }
+
+    .bg-b1 {
+      background-color: #C0672C
+    }
+
+    .bg-b2 {
+      background-color: #965F3B
+    }
+
+    .bg-b3 {
+      background-color: #EB660E
+    }
+
+    .bg-b4 {
+      background-color: #6B4F3C
+    }
+
+    .bg-b5 {
+      background-color: #41362F
+    }
+
+    .bg-b6 {
+      background-color: #33302E
+    }
+
+    .text-b0 {
+      color: #eae3df
+    }
+
+    .text-b1 {
+      color: #C0672C
+    }
+
+    .text-b2 {
+      color: #965F3B
+    }
+
+    .text-b3 {
+      color: #EB660E
+    }
+
+    .text-b4 {
+      color: #6B4F3C
+    }
+
+    .text-b5 {
+      color: #41362F
+    }
+
+    .text-b6 {
+      color: #33302E
+    }
+
+    /* Logo size (no inline styles) */
+    .logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    /* Profile / bell icons */
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+
+    .bell-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Search input: use palette and keep Bootstrap utilities */
+    .search-input .input-group {
+      min-width: 200px;
+      border-width: 2px !important;
+      border-style: solid !important;
+      border-color: #965F3B !important;
+      /* bg-b2 */
+      background-color: #eae3df !important;
+      /* bg-b0 */
+    }
+
+    .search-input::placeholder {
+      color: #965F3B !important;
+      opacity: 1;
+    }
+
+    /* Button styles (small) */
+    .btn-b3 {
+      background-color: #6B4F3C !important;
+      color: #eae3df !important;
+      border: none;
+    }
+
+    .btn-b3:hover {
+      background-color: #41362F !important;
+      color: #eae3df !important;
+    }
+
+    /* Nav links hover (use palette) */
+    .nav-link {
+      transition: color .15s ease;
+    }
+
+    .nav-link:hover {
+      color: #dab09c !important;
+    }
+
+    /* softer hover (can be text-b1 if preferred) */
+
+    /* Make sure collapsed navbar toggler uses palette icon color */
+    .navbar-dark .navbar-toggler-icon {
+      filter: invert(1) brightness(0.9);
+      /* keeps toggler visible on dark bg */
+    }
+
+    /* Фиксираме височината на navbar-а */
+    .navbar {
+      min-height: 70px !important;
+      background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+      position: sticky;
+      top: 40px;
+      z-index: 1;
+      padding-top: .9rem;
+      padding-bottom: .9rem;
+    }
+
+    .footer {
+      background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+    }
+
+    /* Фиксираме hamburger бутона да не пада надолу */
+    .navbar-toggler {
+      padding: 6px 10px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Ако логото е изображение - центрираме го */
+    .navbar-brand img {
+      height: 40px;
+      /* промени при нужда */
+      width: auto;
+    }
+
+    .search:hover {
+      cursor: pointer;
+    }
+
+    .text-b3.fw-bold {
+      text-decoration: none;
+    }
+
+    .text-b3.fw-bold:hover {
+      cursor: pointer;
+    }
+
+    .map-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      /* 16:9 аспектно съотношение */
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    nav.navbargore {
+      height: 40px !important;
+      padding: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: sticky;
+      top: 0px;
+      z-index: 1031;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+  </style>
 </head>
-<body>
-    <nav class="top-navbar">
-        <div class="nav-left">
-            <div class="logo">
-                <img src="./images/B.png" alt="Badreads Logo">
-            </div>
-            <h1 class="site-name">Badreads</h1>
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">My Books</a>
-        </div>
-        <div class="nav-center">
-            <form class="search-container" onsubmit="return false;">
-                <input type="text" placeholder="Search books..." class="search-bar">
-                <button type="submit" class="search-button">
-                    <img src="./images/01-magnifying-glass.png" alt="Search Icon" class="search-icon">
-                </button>
-            </form>
-        </div>
-        <div class="profile-container">
-            <img src="./images/bell.png" alt="Bell icon" class="bell-icon">
-            <img src="./images/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="Profile Icon" class="profile-icon">
-        </div>
-    </nav>     
 
-    <div class="main-content">
-        <div class="left-column">
-            <div id="currently-reading" class="currently-reading-section">
-                <h2>Currently Reading</h2>
-                <div class="book-list" id="book-list">
-                    <div id="noBooksMessage" style="display: none;">No added books</div>
-                    <div class="book">
-                        <img src="./images/_-_-_-_9789542845546_1.jpg" alt="Book 1 Cover">
-                        <div class="book-details">
-                            <p class="book-title">Iron Flame</p>
-                            <p class="book-author">by Rebecca Yaros</p>
-                        </div>
-                    </div>
-                    <div class="book">
-                        <img src="./images/1090.max.jpg" alt="Book 2 Cover">
-                        <div class="book-details">
-                            <p class="book-title">Iron Candlestick</p>
-                            <p class="book-author">by Dimitar Talev</p>
-                        </div>
-                    </div>
-                </div>
-            <button id="addButton">Add a new book</button>
-            </div>
+<body class="bg-b0 text-b5 d-flex flex-column min-vh-100">
 
-            <div id="addBookModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <div class="cover-container">
-                        <div id="coverPreview" class="cover" style="width: 80px; height: 120px; background-color: #f0f0f0;">
-                            Add a cover image
-                        </div>
-                        <input type="file" id="bookCoverInput" accept="image/*" style="display:none;">
-                        <div class="input-container">
-                            <input type="text" id="bookTitle" placeholder="Book Title">
-                            <input type="text" id="bookAuthor" placeholder="Author">
-                        </div>
-                    </div>
-                    <div class="button-container">
-                        <button id="discardButton">Discard</button>
-                        <button id="modalAddButton">Add</button>
-                    </div>
-                </div>        
-            </div>
-            
-            <div class="to-be-reviewed">
-                <h2>To Be Reviewed</h2>
-                <div class="review-book-list">
-                    <div class="book" id="book1">
-                        <img src="./images/214661_b.jpg" alt="Book 3 Cover">
-                    </div>
-                    <div class="book">
-                        <img src="./images/48855133.jpg" alt="Book 4 Cover">
-                    </div>
-                    <div class="book">
-                        <img src="./images/97895427050171520426934.6255.jpg" alt="Book 5 Cover">
-                    </div>
-                    <div class="book">
-                        <img src="./images/prespanskite-kambani.jpg" alt="Book 6 Cover">
-                    </div>
-                    <div class="book">
-                        <img src="./images/skandalniat-zhivot-na-evelin-hiugo.jpg" alt="Book 7 Cover">
-                    </div>
-                    <div class="book">
-                        <img src="./images/uravnenieto-na-dzheymi-dreyk-30.jpg" alt="Book 8 Cover">
-                    </div>
-                </div>
-                <button class="add-book-button">View all books</button>
-            </div>
+  <nav class="navbargore bg-b5 d-flex justify-content-center align-items-center">
+    <span class="text-b0 fw-bold w-100 text-center">Vote for your favourite bad book of the year &#10148;</span>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-b5 px-3 shadow">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="bi bi-bootstrap fs-1 text-b4 me-2"></i>
+      <span class="text-b0 fw-bold">Badreads</span>
+    </a>
+
+    <!-- SEARCH -->
+    <form class="flex-grow-1 d-flex justify-content-center" role="search">
+      <div class="d-flex align-items-center flex-column w-100">
+
+        <!-- Desktop input -->
+        <div class="input-group d-none d-sm-flex w-50">
+          <input class="form-control search-input text-b5" type="search" placeholder="Search" aria-label="Search">
+          <span class="input-group-text bg-b4 search">
+            <i class="fas fa-search text-b0"></i>
+          </span>
         </div>
 
-        <div id="review-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="modal-body">
-                    <img id="modal-book-cover" src="" alt="Book Cover" />
-                    <div class="details-container">
-                        <input type="text" id="book-Title" placeholder="Enter title" required/>
-                        <input type="text" id="book-Author" placeholder="Enter author" required/>
-                        <textarea id="book-review" placeholder="Write your review" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-buttons">
-                    <button id="discardReviewButton">Discard</button>
-                    <button id="addReviewButton">Add</button>
-                </div>
-            </div>
+        <!-- Mobile button -->
+        <button class="btn btn-b3 d-flex d-sm-none mb-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+          <i class="fas fa-search text-b0"></i>
+        </button>
+
+        <!-- Mobile collapse search input -->
+        <div class="collapse w-75" id="mobileSearch">
+          <input class="form-control mt-2" type="search" placeholder="Search" aria-label="Search">
         </div>
 
-        <div class="review-container">
-            <div id="reviews-container">
-            </div>
-            <div class="review-section" id="review1">
-                <div class="review-header">
-                    <img src="./images/Woman_at_Lover's_Bridge_Tanjung_Sepat_(cropped).jpg" alt="User Profile" class="user-profile">
-                    <span class="user-name">Anne James</span>
-                </div>
-                <div class="review-body">
-                    <img src="./images/61N-UOA0alL._UF1000,1000_QL80_.jpg" alt="Book Cover" class="book-cover">
-                    <div class="book-details">
-                        <h3 class="book-title">Jane Eyre</h3>
-                        <p class="review-text">
-                            'The book was so bad I couldn't even finish it...'
-                            <a href="#" class="more-link">More...</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="review-footer">
-                    <span class="like-count" style="display: none;">
-                        <img src="./images/25297.png" alt="Thumbs Up" class="thumb-icon">
-                        <span class="like-number">1</span>
-                    </span>
-                    <a href="#" class="action-link like-link" onclick="likeReview(this)">Like</a>
-                    <a href="#" class="action-link">Comment</a>
-                </div>                                     
-                <div class="comment-section">
-                    <img src="./images/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="Your Profile" class="comment-profile">
-                    <input type="text" placeholder="Leave a comment..." class="comment-input">
-                </div>
-            </div>
-        
-            <div class="review-section">
-                <div class="review-header">
-                    <img src="./images/pexels-olly-733872.jpg" alt="User Profile" class="user-profile">
-                    <span class="user-name">Margaret Johnes</span>
-                </div>
-                <div class="review-body">
-                    <img src="./images/71OZY035QKL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover" class="book-cover">
-                    <div class="book-details">
-                        <h3 class="book-title">The Little Prince</h3>
-                        <p class="review-text">
-                            'I didn't quite get what the hype is about...'
-                            <a href="#" class="more-link">More...</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="review-footer">
-                    <span class="like-count" style="display: none;">
-                        <img src="./images/25297.png" alt="Thumbs Up" class="thumb-icon">
-                        <span class="like-number">1</span>
-                    </span>
-                    <a href="#" class="action-link like-link" onclick="likeReview(this)">Like</a>
-                    <a href="#" class="action-link">Comment</a>
-                </div>        
-                <div class="comment-section">
-                    <img src="./images/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="Your Profile" class="comment-profile">
-                    <input type="text" placeholder="Leave a comment..." class="comment-input">
-                </div>
-            </div>
-        
-            <div class="review-section">
-                <div class="review-header">
-                    <img src="./images/c0749b7cc401421662ae901ec8f9f660.jpg" alt="User Profile" class="user-profile">
-                    <span class="user-name">Anonymous</span>
-                </div>
-                <div class="review-body">
-                    <img src="./images/1683720189-0.jpeg" alt="Book Cover" class="book-cover">
-                    <div class="book-details">
-                        <h3 class="book-title">Rich Dad, Poor Dad</h3>
-                        <p class="review-text">
-                            'The most unnecessary book ever...'
-                            <a href="#" class="more-link">More...</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="review-footer">
-                    <span class="like-count" style="display: none;">
-                        <img src="./images/25297.png" alt="Thumbs Up" class="thumb-icon">
-                        <span class="like-number">1</span>
-                    </span>
-                    <a href="#" class="action-link like-link" onclick="likeReview(this)">Like</a>
-                    <a href="#" class="action-link">Comment</a>
-                </div>        
-                <div class="comment-section">
-                    <img src="./images/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="Your Profile" class="comment-profile">
-                    <input type="text" placeholder="Leave a comment..." class="comment-input">
-                </div>
-            </div>
+      </div>
+    </form>
 
-            <div class="review-section">
-                <div class="review-header">
-                    <img src="./images/Outdoors-man-portrait_(cropped).jpg" alt="User Profile" class="user-profile">
-                    <span class="user-name">John Dimitrov</span>
-                </div>
-                <div class="review-body">
-                    <img src="./images/51mVxLPBgzL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover" class="book-cover">
-                    <div class="book-details">
-                        <h3 class="book-title">The Bible</h3>
-                        <p class="review-text">
-                            'Ummmm...'
-                            <a href="#" class="more-link">More...</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="review-footer">
-                    <span class="like-count" style="display: none;">
-                        <img src="./images/25297.png" alt="Thumbs Up" class="thumb-icon">
-                        <span class="like-number">1</span>
-                    </span>
-                    <a href="#" class="action-link like-link" onclick="likeReview(this)">Like</a>
-                    <a href="#" class="action-link">Comment</a>
-                </div>        
-                <div class="comment-section">
-                    <img src="./images/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg" alt="Your Profile" class="comment-profile">
-                    <input type="text" placeholder="Leave a comment..." class="comment-input">
-                </div>
-            </div>
-        </div>        
 
-        <div class="top-10-worst-books">
-            <h2>Top 10 Worst Books</h2>
-            <div class="book-list">
-                <div class="book">
-                    <img src="./images/hopeless-9781476743554_hr.jpg" alt="Worst Book 1 Cover">
-                    <div class="book-details">
-                        <p class="book-title">Hopeless</p>
-                        <p class="book-author">by Colleen Hoover</p>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="./images/27362503.jpg" alt="Worst Book 2 Cover">
-                    <div class="book-details">
-                        <p class="book-title">It ends with us</p>
-                        <p class="book-author">by Colleen Hoover</p>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="./images/71L5vWJf6JL._AC_UF1000,1000_QL80_.jpg" alt="Worst Book 3 Cover">
-                    <div class="book-details">
-                        <p class="book-title">All your perfects</p>
-                        <p class="book-author">by Colleen Hoover</p>
-                    </div>
-                </div>
-            </div>
-            <button class="view-all-button">View all 10 books</button>
-        </div>
+    <!-- HAMBURGER (opens offcanvas only on small screens) -->
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- DESKTOP MENU -->
+    <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Books</a></li>
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Profile</a></li>
+      </ul>
     </div>
 
-    <script src="home.js"></script>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Badreads. All rights reserved.</p>
+  </nav>
+
+  <!-- OFFCANVAS MENU (mobile) -->
+  <div class="offcanvas offcanvas-end bg-b5 text-b0" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Books</a></li>
+        <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="#">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container px-4 mt-4 flex-grow-1 mb-4">
+    <div class="row g-4">
+
+      <!-- Left Sidebar -->
+      <div class="col-12 col-md-3 d-flex flex-column gap-4">
+
+        <!-- Currently Reading -->
+        <div class="card bg-b0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-b5 fw-bold mb-3">Currently Reading</h5>
+            <div class="d-flex flex-column gap-2" id="book-list">
+              <div class="d-flex gap-2 align-items-top">
+                <img src="./images/_-_-_-_9789542845546_1.jpg" alt="Book 1" class="img-fluid"
+                  style="width:80px; border-radius:5px;">
+                <div>
+                  <p class="mb-0 fw-bold text-b5">Iron Flame</p>
+                  <p class="mb-0 text-b6">by Rebecca Yaros</p>
+                  <p class="mb-0 text-b6 small">123 pages left</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <a href="#" class="btn btn-b3 mt-3">Add a new book</a>
+            </div>
+          </div>
         </div>
-    </footer>    
+
+        <!-- To Be Reviewed -->
+        <div class="card bg-b0 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title text-b5 fw-bold mb-3">To be Reviewed</h5>
+
+            <div class="row g-3 justify-content-center">
+              <div class="col-4 d-flex justify-content-center">
+                <img src="./images/214661_b.jpg" alt="Book" class="img-fluid rounded" width="80">
+              </div>
+
+              <div class="col-4 d-flex justify-content-center">
+                <img src="./images/48855133.jpg" alt="Book" class="img-fluid rounded" width="80">
+              </div>
+
+              <div class="col-4 d-flex justify-content-center">
+                <img src="./images/97895427050171520426934.6255.jpg" alt="Book" class="img-fluid rounded" width="80">
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-b3 mt-3">View all books</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Column (Reviews) -->
+      <div class="col-12 col-md-6 d-flex flex-column gap-4">
+
+        <!-- Review 1 -->
+        <div class="card bg-b0 shadow-sm p-3">
+          <div class="d-flex align-items-center mb-2">
+            <img src="./images/Woman_at_Lover's_Bridge_Tanjung_Sepat_(cropped).jpg"
+              class="rounded-circle me-2 profile-img img-fluid" alt="Profile picture of Anne James">
+            <span class="fw-bold text-b5">Anne James</span>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./images/61N-UOA0alL._UF1000,1000_QL80_.jpg" class="img-fluid"
+              style="width:80px; border-radius:5px;" alt="Anne's Book Cover">
+            <div>
+              <h6 class="fw-bold text-b5">Jane Eyre</h6>
+              <p class="text-b6">'The book was so bad I couldn't even finish it...'</p>
+              <a href="#" class="text-b3 fw-bold">More...</a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-b3 fw-bold">Like</a>
+            <a href="#" class="text-b3 fw-bold">Comment</a>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="card bg-b0 shadow-sm p-3">
+          <div class="d-flex align-items-center mb-2">
+            <img src="./images/pexels-olly-733872.jpg" class="rounded-circle me-2 profile-img img-fluid"
+              alt="Profile picture of Margaret Johnes">
+            <span class="fw-bold text-b5">Margaret Johnes</span>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./images/71OZY035QKL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
+              style="width:80px; border-radius:5px;" alt="Margaret's Book Cover">
+            <div>
+              <h6 class="fw-bold text-b5">The Little Prince</h6>
+              <p class="text-b6">'I didn't quite get what the hype is about...'</p>
+              <a href="#" class="text-b3 fw-bold">More...</a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-b3 fw-bold">Like</a>
+            <a href="#" class="text-b3 fw-bold">Comment</a>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="card bg-b0 shadow-sm p-3">
+          <div class="d-flex align-items-center mb-2">
+            <img src="./images/c0749b7cc401421662ae901ec8f9f660.jpg" class="rounded-circle me-2 profile-img img-fluid"
+              alt="Profile picture of Anonymous">
+            <span class="fw-bold text-b5">Anonymous</span>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./images/1683720189-0.jpeg" class="img-fluid" style="width:80px; border-radius:5px;"
+              alt="Anonymous's Book Cover">
+            <div>
+              <h6 class="fw-bold text-b5">Rich Dad, Poor Dad</h6>
+              <p class="text-b6">'The most unnecessary book ever...'</p>
+              <a href="#" class="text-b3 fw-bold">More...</a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-b3 fw-bold">Like</a>
+            <a href="#" class="text-b3 fw-bold">Comment</a>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="card bg-b0 shadow-sm p-3">
+          <div class="d-flex align-items-center mb-2">
+            <img src="./images/Outdoors-man-portrait_(cropped).jpg" class="rounded-circle me-2 profile-img img-fluid"
+              alt="Profile picture of John Dimitrov">
+            <span class="fw-bold text-b5">John Dimitrov</span>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./images/51mVxLPBgzL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
+              style="width:80px; border-radius:5px;" alt="John's Book Cover">
+            <div>
+              <h6 class="fw-bold text-b5">The Bible</h6>
+              <p class="text-b6">'Ummmm...'</p>
+              <a href="#" class="text-b3 fw-bold">More...</a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-b3 fw-bold">Like</a>
+            <a href="#" class="text-b3 fw-bold">Comment</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="col-12 col-md-3 d-flex flex-column gap-3">
+
+        <!-- Top 10 Worst Books -->
+        <div class="card bg-b0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-b5 fw-bold mb-3">Top 10 Worst Books</h5>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex gap-2 align-items-start">
+                <img src="./images/hopeless-9781476743554_hr.jpg" class="img-fluid"
+                  style="width:50px; border-radius:3px;" alt="Top 1 Worst Book">
+                <div>
+                  <p class="mb-1 fw-bold text-b5">Hopeless</p>
+                  <p class="mb-0 text-b6 small">Colleen Hoover</p>
+                </div>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="./images/27362503.jpg" class="img-fluid" style="width:50px; border-radius:3px;"
+                  alt="Top 2 Worst Book">
+                <div>
+                  <p class="mb-1 fw-bold text-b5">It Ends With Us</p>
+                  <p class="mb-0 text-b6 small">Colleen Hoover</p>
+                </div>
+              </div>
+              <div class="d-flex gap-2 align-items-start">
+                <img src="./images/71L5vWJf6JL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
+                  style="width:50px; border-radius:3px;" alt="Top 3 Worst Book">
+                <div>
+                  <p class="mb-1 fw-bold text-b5">All Your Perfects</p>
+                  <p class="mb-0 text-b6 small">Colleen Hoover</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <a href="#" class="btn btn-b3 mt-3">See all 10</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Platforms + Map -->
+        <div class="card bg-b0 shadow-sm p-3 text-center">
+          <h6 class="text-b5 fw-bold mb-2">Coffee money for the creator</h6>
+          <div class="d-flex justify-content-center gap-3 mb-3">
+            <a href="#" class="text-b5 fs-4"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-b5 fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-b5 fs-4"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="map-container">
+            <iframe src="https://shorturl.at/OcKpg" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer (full width, sticky if content short) -->
+  <footer class="footer bg-b5 text-b0 text-center py-2 mt-auto shadow">
+    &copy; 2024 Badreads. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="home.js"></script>
 </body>
+
+
 </html>
