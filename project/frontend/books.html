@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Badreads</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="home.css"> -->
+
+    <style>
+        .bg-b0 {
+            background-color: #eae3df
+        }
+
+        .bg-b1 {
+            background-color: #C0672C
+        }
+
+        .bg-b2 {
+            background-color: #965F3B
+        }
+
+        .bg-b3 {
+            background-color: #EB660E
+        }
+
+        .bg-b4 {
+            background-color: #6B4F3C
+        }
+
+        .bg-b5 {
+            background-color: #41362F
+        }
+
+        .bg-b6 {
+            background-color: #33302E
+        }
+
+        .text-b0 {
+            color: #eae3df
+        }
+
+        .text-b1 {
+            color: #C0672C
+        }
+
+        .text-b2 {
+            color: #965F3B
+        }
+
+        .text-b3 {
+            color: #EB660E
+        }
+
+        .text-b4 {
+            color: #6B4F3C
+        }
+
+        .text-b5 {
+            color: #41362F
+        }
+
+        .text-b6 {
+            color: #33302E
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+            min-height: 100vh;
+        }
+
+        nav.navbargore {
+            height: 35px !important;
+            font-size: 1rem;
+        }
+
+        /* По-нисък, стегнат navbar */
+        .navbar {
+            background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+            padding-top: 0.70rem !important;
+            padding-bottom: 0.70rem !important;
+            min-height: 48px !important;
+        }
+
+        /* Лого – по-малко */
+        .navbar-brand img {
+            height: 30px !important;
+        }
+
+        .navbar-brand {
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px;
+            /* разстояние между иконата и текста */
+        }
+
+        .navbar-brand i {
+            display: flex !important;
+            align-items: center !important;
+            height: 32px;
+            /* да съвпада с логото */
+            margin-bottom: 0 !important;
+            line-height: 1 !important;
+        }
+
+        /* Намалява височината на бутона (hamburger) */
+        .navbar-toggler {
+            padding: 2px 6px !important;
+        }
+
+        /* Search input да не раздува navbar-а */
+        .input-group {
+            height: 37px;
+        }
+
+        .input-group .form-control {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .card-book {
+            text-align: center;
+            background-color: #eae3df;
+            /* bg-b0 */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .card-book img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+
+        .card-book .card-body {
+            padding: 10px;
+        }
+
+        .btn-vote {
+            background-color: #41362F;
+            /* bg-b5 */
+            color: #eae3df;
+            /* text-b0 */
+            border: none;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .btn-vote:hover {
+            background-color: #6B4F3C;
+            /* bg-b4 */
+            color: #eae3df;
+        }
+
+        .custom-btn:hover {
+            box-shadow: 0 0 0 2px #41362F;
+            color: #41362F;
+        }
+
+        .btn-b3 {
+            background-color: #6B4F3C !important;
+            color: #eae3df !important;
+            border: none;
+        }
+
+        .btn-b3:hover {
+            background-color: #41362F !important;
+            color: #eae3df !important;
+        }
+
+        .search-input {
+            color: #41362F !important;
+        }
+
+        .input-group-text.search {
+            border: none !important;
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbargore bg-b5 d-flex justify-content-center align-items-center">
+        <span class="text-b0 fw-bold w-100 text-center">Vote for your favourite bad book of the year &#10148;</span>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-b5 px-3 shadow">
+        <a class="navbar-brand d-flex align-items-center" href="home.html">
+            <i class="bi bi-bootstrap fs-1 text-b4 me-2"></i>
+            <span class="text-b0 fw-bold">Badreads</span>
+        </a>
+
+        <!-- SEARCH -->
+        <form class="flex-grow-1 d-flex justify-content-center" role="search">
+            <div class="d-flex align-items-center flex-column w-100">
+
+                <!-- Desktop input -->
+                <div class="input-group d-none d-sm-flex w-50">
+                    <input class="form-control search-input text-b5" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <span class="input-group-text bg-b4 search">
+                        <i class="fas fa-search text-b0"></i>
+                    </span>
+                </div>
+
+                <!-- Mobile button -->
+                <button class="btn btn-b3 d-flex d-sm-none mb-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+                    <i class="fas fa-search text-b0"></i>
+                </button>
+
+                <!-- Mobile collapse search input -->
+                <div class="collapse w-75" id="mobileSearch">
+                    <input class="form-control mt-2" type="search" placeholder="Search" aria-label="Search">
+                </div>
+
+            </div>
+        </form>
+
+        <!-- HAMBURGER (opens offcanvas only on small screens) -->
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- DESKTOP MENU -->
+        <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="books.html">Books</a></li>
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="profile.html">Profile</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- OFFCANVAS MENU (mobile) -->
+    <div class="offcanvas offcanvas-end bg-b5 text-b0" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="books.html">Books</a></li>
+                <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-xl py-4">
+        <h2 class="text-b5 fs-1 fw-bold mb-4 text-center">Vote for your favourite bad book</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- BOOK 1 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/1984.jpg" alt="1984">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">1984</h6>
+                        <p class="text-b6 mb-2">George Orwell</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 2 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/mp.jpg" alt="Harry Potter">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Harry Potter</h6>
+                        <p class="text-b6 mb-2">J.K. Rowling</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 3 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/kk.jpg" alt="The Book Thief">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">The Book Thief</h6>
+                        <p class="text-b6 mb-2">Markus Zusak</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 4 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/vp.jpg" alt="The Hobbit">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">The Hobbit</h6>
+                        <p class="text-b6 mb-2">J.R.R. Tolkien</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 5 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/gp.jpg" alt="Pride and Prejudice">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Pride & Prejudice</h6>
+                        <p class="text-b6 mb-2">Jane Austen</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 6 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/ubiesh.jpg" alt="Mockingbird">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">To Kill a Mockingbird</h6>
+                        <p class="text-b6 mb-2">Harper Lee</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 7 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/ak.jpg" alt="Catcher">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Catcher in the Rye</h6>
+                        <p class="text-b6 mb-2">J.D. Salinger</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 8 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/it.jpg" alt="Gatsby">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">The Great Gatsby</h6>
+                        <p class="text-b6 mb-2">F. Scott Fitzgerald</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 9 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/sm.png" alt="Moby Dick">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Moby Dick</h6>
+                        <p class="text-b6 mb-2">Herman Melville</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 10 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/al.jpg" alt="War and Peace">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">War and Peace</h6>
+                        <p class="text-b6 mb-2">Leo Tolstoy</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 11 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/fr.jpg" alt="Frankenstein">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Frankenstein</h6>
+                        <p class="text-b6 mb-2">Mary Shelley</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOK 12 -->
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="./images/dg.jpg" alt="Dorian Gray">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Dorian Gray</h6>
+                        <p class="text-b6 mb-2">Oscar Wilde</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
