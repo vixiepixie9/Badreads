@@ -7,28 +7,15 @@
   <title>Homepage - Badreads</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-  <!-- <link rel="stylesheet" href="home.css"> -->
   <style>
-    /* -------------------------------------- */
-    /*  GLOBAL STYLES  */
-    /* -------------------------------------- */
-
     body {
       background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
       min-height: 100vh;
       font-family: "Poppins", sans-serif;
     }
-
-    /* -------------------------------------- */
-    /*  COLOR PALETTE (BG + TEXT)  */
-    /* -------------------------------------- */
 
     .bg-b0 {
       background-color: #eae3df;
@@ -86,10 +73,6 @@
       color: #33302E;
     }
 
-    /* -------------------------------------- */
-    /*  LOGO + ICONS  */
-    /* -------------------------------------- */
-
     .logo-img {
       height: 50px;
       width: auto;
@@ -106,78 +89,11 @@
       height: 24px;
     }
 
-    /* Цветове */
-    .bg-b0 {
-      background-color: #eae3df
-    }
-
-    .bg-b1 {
-      background-color: #C0672C
-    }
-
-    .bg-b2 {
-      background-color: #965F3B
-    }
-
-    .bg-b3 {
-      background-color: #EB660E
-    }
-
-    .bg-b4 {
-      background-color: #6B4F3C
-    }
-
-    .bg-b5 {
-      background-color: #41362F
-    }
-
-    .bg-b6 {
-      background-color: #33302E
-    }
-
-    .text-b0 {
-      color: #eae3df
-    }
-
-    .text-b1 {
-      color: #C0672C
-    }
-
-    .text-b2 {
-      color: #965F3B
-    }
-
-    .text-b3 {
-      color: #EB660E
-    }
-
-    .text-b4 {
-      color: #6B4F3C
-    }
-
-    .text-b5 {
-      color: #41362F
-    }
-
-    .text-b6 {
-      color: #33302E
-    }
-
-    /* Основен фон */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
-      min-height: 100vh;
-      margin: 0;
-    }
-
-    /* Горна лента */
     nav.navbargore {
       height: 35px !important;
       font-size: 1rem;
     }
 
-    /* Главен navbar – идентичен с books.html */
     .navbar {
       background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
       padding-top: 0.70rem !important;
@@ -185,7 +101,6 @@
       min-height: 48px !important;
     }
 
-    /* Brand logo + текст */
     .navbar-brand {
       display: flex !important;
       align-items: center !important;
@@ -204,12 +119,10 @@
       margin: 0 !important;
     }
 
-    /* Hamburger бутон */
     .navbar-toggler {
       padding: 2px 6px !important;
     }
 
-    /* SEARCH – идентично копие */
     .input-group {
       height: 37px;
     }
@@ -227,7 +140,6 @@
       border: none !important;
     }
 
-    /* Search button mobile */
     .btn-b3 {
       background-color: #6B4F3C !important;
       color: #eae3df !important;
@@ -239,14 +151,9 @@
       color: #eae3df !important;
     }
 
-    /* Link hover */
     .text-b3.fw-bold:hover {
       cursor: pointer;
     }
-
-    /* -------------------------------------- */
-    /*  MAP CONTAINER  */
-    /* -------------------------------------- */
 
     .map-container {
       position: relative;
@@ -264,10 +171,6 @@
       border: 0;
     }
 
-    /* -------------------------------------- */
-    /*  FOOTER  */
-    /* -------------------------------------- */
-
     .footer {
       background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
     }
@@ -278,7 +181,8 @@
 <body class="bg-b0 text-b5 d-flex flex-column min-vh-100">
 
   <nav class="navbargore bg-b5 d-flex justify-content-center align-items-center">
-    <span class="text-b0 fw-bold w-100 text-center">Vote for your favourite bad book of the year &#10148;</span>
+    <span class="text-b0 fw-bold w-100 text-center">Vote for your favourite bad book of the year
+      <a href="books.html" class="text-b0 text-decoration-none ms-2"> &#10148; </a></span>
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-b5 px-3 shadow">
@@ -287,11 +191,9 @@
       <span class="text-b0 fw-bold ms-2">Badreads</span>
     </a>
 
-    <!-- SEARCH -->
     <form class="flex-grow-1 d-flex justify-content-center" role="search">
       <div class="d-flex align-items-center flex-column w-100">
 
-        <!-- Desktop input -->
         <div class="input-group d-none d-sm-flex w-50">
           <input class="form-control search-input text-b5" type="search" placeholder="Search" aria-label="Search">
           <span class="input-group-text bg-b4 search">
@@ -299,13 +201,11 @@
           </span>
         </div>
 
-        <!-- Mobile button -->
         <button class="btn btn-b3 d-flex d-sm-none mb-1" type="button" data-bs-toggle="collapse"
           data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
           <i class="fas fa-search text-b0"></i>
         </button>
 
-        <!-- Mobile collapse search input -->
         <div class="collapse w-75" id="mobileSearch">
           <input class="form-control mt-2" type="search" placeholder="Search" aria-label="Search">
         </div>
@@ -313,13 +213,10 @@
       </div>
     </form>
 
-
-    <!-- HAMBURGER (opens offcanvas only on small screens) -->
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- DESKTOP MENU -->
     <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="home.html">Home</a></li>
@@ -330,7 +227,6 @@
 
   </nav>
 
-  <!-- OFFCANVAS MENU (mobile) -->
   <div class="offcanvas offcanvas-end bg-b5 text-b0" tabindex="-1" id="mobileMenu">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menu</h5>
@@ -346,14 +242,11 @@
     </div>
   </div>
 
-  <!-- Main content -->
   <div class="container px-4 mt-4 flex-grow-1 mb-4">
     <div class="row g-4">
 
-      <!-- Left Sidebar -->
       <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-4">
 
-        <!-- Currently Reading -->
         <div class="card bg-b0 shadow-sm">
           <div class="card-body">
             <h5 class="card-title text-b5 fw-bold mb-3">Currently Reading</h5>
@@ -374,7 +267,6 @@
           </div>
         </div>
 
-        <!-- To Be Reviewed -->
         <div class="card bg-b0 shadow-sm">
           <div class="card-body text-center">
             <h5 class="card-title text-b5 fw-bold mb-3">To be Reviewed</h5>
@@ -401,7 +293,7 @@
 
         <div class="card bg-b0 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title text-b5 fw-bold mb-3">2024 Reading Challenge</h5>
+            <h5 class="card-title text-b5 fw-bold mb-3">2025 Reading Challenge</h5>
 
             <div class="d-flex justify-content-between align-items-end mb-1">
               <span class="fw-bold text-b5 display-6">32</span>
@@ -423,11 +315,12 @@
             <h1 class="fs-6">Not a bad one :)</h1>
             <figure class="mb-0">
               <blockquote class="blockquote">
-                <p class="text-b6 fst-italic fs-6">"A reader lives a thousand lives before he dies. The man who never
-                  reads lives only one."</p>
+                <p class="text-b6 fst-italic fs-6">"I think we ought to read only the kind of books that wound and stab
+                  us. If the book we are reading doesn't wake us up with a blow on the head, what are we reading it for?
+                  A book must be the axe for the frozen sea within us."</p>
               </blockquote>
               <figcaption class="blockquote-footer text-end mt-2 text-b5 fw-bold">
-                George R.R. Martin
+                Franz Kafka
               </figcaption>
             </figure>
           </div>
@@ -435,15 +328,18 @@
 
       </div>
 
-      <!-- Main Column (Reviews) -->
       <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-4">
 
-        <!-- Review 1 -->
         <div class="card bg-b0 shadow-sm p-3">
-          <div class="d-flex align-items-center mb-2">
-            <img src="./images/Woman_at_Lover's_Bridge_Tanjung_Sepat_(cropped).jpg"
-              class="rounded-circle me-2 profile-img img-fluid" alt="Profile picture of Anne James">
-            <span class="fw-bold text-b5">Anne James</span>
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-center mb-2">
+              <img src="./images/Woman_at_Lover's_Bridge_Tanjung_Sepat_(cropped).jpg"
+                class="rounded-circle me-2 profile-img img-fluid" alt="Profile picture of Anne James">
+              <span class="fw-bold text-b5">Anne James</span>
+            </div>
+            <span class="badge text-b4 shadow-sm rounded-pill">
+              01-12-2025 14:35
+            </span>
           </div>
           <div class="d-flex gap-3">
             <img src="./images/61N-UOA0alL._UF1000,1000_QL80_.jpg" class="img-fluid"
@@ -460,12 +356,16 @@
           </div>
         </div>
 
-        <!-- Review 2 -->
         <div class="card bg-b0 shadow-sm p-3">
-          <div class="d-flex align-items-center mb-2">
-            <img src="./images/pexels-olly-733872.jpg" class="rounded-circle me-2 profile-img img-fluid"
-              alt="Profile picture of Margaret Johnes">
-            <span class="fw-bold text-b5">Margaret Johnes</span>
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-center mb-2">
+              <img src="./images/pexels-olly-733872.jpg" class="rounded-circle me-2 profile-img img-fluid"
+                alt="Profile picture of Margaret Johnes">
+              <span class="fw-bold text-b5">Margaret Johnes</span>
+            </div>
+            <span class="badge text-b4 shadow-sm rounded-pill">
+              11-11-2025 19:56
+            </span>
           </div>
           <div class="d-flex gap-3">
             <img src="./images/71OZY035QKL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
@@ -480,14 +380,19 @@
             <a href="#" class="text-b3 fw-bold text-decoration-none">Like</a>
             <a href="#" class="text-b3 fw-bold text-decoration-none">Comment</a>
           </div>
+
         </div>
 
-        <!-- Review 3 -->
         <div class="card bg-b0 shadow-sm p-3">
-          <div class="d-flex align-items-center mb-2">
-            <img src="./images/c0749b7cc401421662ae901ec8f9f660.jpg" class="rounded-circle me-2 profile-img img-fluid"
-              alt="Profile picture of Anonymous">
-            <span class="fw-bold text-b5">Anonymous</span>
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-center mb-2">
+              <img src="./images/c0749b7cc401421662ae901ec8f9f660.jpg" class="rounded-circle me-2 profile-img img-fluid"
+                alt="Profile picture of Anonymous">
+              <span class="fw-bold text-b5">Anonymous</span>
+            </div>
+            <span class="badge text-b4 shadow-sm rounded-pill">
+              06-11-2025 09:12
+            </span>
           </div>
           <div class="d-flex gap-3">
             <img src="./images/1683720189-0.jpeg" class="img-fluid" style="width:80px; border-radius:5px;"
@@ -504,13 +409,37 @@
           </div>
         </div>
 
+        <div class="card bg-b0 shadow-sm p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-center mb-2">
+              <img src="./images/Outdoors-man-portrait_(cropped).jpg" class="rounded-circle me-2 profile-img img-fluid"
+                alt="Profile picture of John Dimitrov">
+              <span class="fw-bold text-b5">John Dimitrov</span>
+            </div>
+            <span class="badge text-b4 shadow-sm rounded-pill">
+              25-10-2025 19:15
+            </span>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./images/51mVxLPBgzL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
+              style="width:80px; border-radius:5px;" alt="John's Book Cover">
+            <div>
+              <h6 class="fw-bold text-b5">The Bible</h6>
+              <p class="text-b6">'Ummmm...'</p>
+              <a href="#" class="text-b3 fw-bold text-decoration-none">More...</a>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-2">
+            <a href="#" class="text-b3 fw-bold text-decoration-none">Like</a>
+            <a href="#" class="text-b3 fw-bold text-decoration-none">Comment</a>
+          </div>
+        </div>
+
 
       </div>
 
-      <!-- Right Sidebar -->
       <div class="col-12 col-md-12 col-lg-4 d-flex flex-column gap-3">
 
-        <!-- Top 10 Worst Books -->
         <div class="card bg-b0 shadow-sm">
           <div class="card-body">
             <h5 class="card-title text-b5 fw-bold mb-3">Top 10 Worst Books</h5>
@@ -519,7 +448,7 @@
                 <img src="./images/hopeless-9781476743554_hr.jpg" class="img-fluid"
                   style="width:50px; border-radius:3px;" alt="Top 1 Worst Book">
                 <div>
-                  <p class="mb-1 fw-bold text-b5">Hopeless</p>
+                  <p class="mb-1 fw-bold text-b5">1. Hopeless</p>
                   <p class="mb-0 text-b6 small">Colleen Hoover</p>
                 </div>
               </div>
@@ -527,7 +456,7 @@
                 <img src="./images/27362503.jpg" class="img-fluid" style="width:50px; border-radius:3px;"
                   alt="Top 2 Worst Book">
                 <div>
-                  <p class="mb-1 fw-bold text-b5">It Ends With Us</p>
+                  <p class="mb-1 fw-bold text-b5">2. It Ends With Us</p>
                   <p class="mb-0 text-b6 small">Colleen Hoover</p>
                 </div>
               </div>
@@ -535,24 +464,23 @@
                 <img src="./images/71L5vWJf6JL._AC_UF1000,1000_QL80_.jpg" class="img-fluid"
                   style="width:50px; border-radius:3px;" alt="Top 3 Worst Book">
                 <div>
-                  <p class="mb-1 fw-bold text-b5">All Your Perfects</p>
+                  <p class="mb-1 fw-bold text-b5">3. All Your Perfects</p>
                   <p class="mb-0 text-b6 small">Colleen Hoover</p>
                 </div>
               </div>
             </div>
             <div class="text-end">
-              <a href="#" class="btn btn-b3 mt-3">See all 10</a>
+              <a href="books.html" class="btn btn-b3 mt-3">See all 10</a>
             </div>
           </div>
         </div>
 
-        <!-- Social Platforms + Map -->
         <div class="card bg-b0 shadow-sm p-3 text-center">
           <h6 class="text-b5 fw-bold mb-2">Coffee money for the creator</h6>
           <div class="d-flex justify-content-center gap-3 mb-3">
-            <a href="#" class="text-b5 fs-4"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-b5 fs-4"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-b5 fs-4"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com" class="text-b5 fs-4"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" class="text-b5 fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.x.com" class="text-b5 fs-4"><i class="fab fa-twitter"></i></a>
           </div>
           <div class="map-container">
             <iframe src="https://shorturl.at/OcKpg" allowfullscreen="" loading="lazy"
@@ -565,14 +493,10 @@
     </div>
   </div>
 
-  <!-- Footer (full width, sticky if content short) -->
-  <footer class="footer bg-b5 text-b0 text-center py-2 mt-auto shadow">
-    &copy; 2024 Badreads. All rights reserved.
+  <footer class="footer bg-b5 text-b4 fw-bold text-center py-2 mt-auto shadow">
+    &copy; 2025 Badreads. All rights reserved.
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="home.js"></script> -->
 </body>
-
-
 </html>

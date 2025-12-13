@@ -7,13 +7,9 @@
     <title>Books - Badreads</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <!-- <link rel="stylesheet" href="home.css"> -->
 
     <style>
         .bg-b0 {
@@ -83,7 +79,6 @@
             font-size: 1rem;
         }
 
-        /* По-нисък, стегнат navbar */
         .navbar {
             background: linear-gradient(90deg, #a07b63 0%, #dbb79f 30%, #dbb79f 70%, #a07b63 100%);
             padding-top: 0.70rem !important;
@@ -91,7 +86,6 @@
             min-height: 48px !important;
         }
 
-        /* Лого – по-малко */
         .navbar-brand img {
             height: 30px !important;
         }
@@ -100,24 +94,20 @@
             display: flex !important;
             align-items: center !important;
             gap: 6px;
-            /* разстояние между иконата и текста */
         }
 
         .navbar-brand i {
             display: flex !important;
             align-items: center !important;
             height: 32px;
-            /* да съвпада с логото */
             margin-bottom: 0 !important;
             line-height: 1 !important;
         }
 
-        /* Намалява височината на бутона (hamburger) */
         .navbar-toggler {
             padding: 2px 6px !important;
         }
 
-        /* Search input да не раздува navbar-а */
         .input-group {
             height: 37px;
         }
@@ -130,7 +120,6 @@
         .card-book {
             text-align: center;
             background-color: #eae3df;
-            /* bg-b0 */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
@@ -151,9 +140,7 @@
 
         .btn-vote {
             background-color: #41362F;
-            /* bg-b5 */
             color: #eae3df;
-            /* text-b0 */
             border: none;
             width: 100%;
             transition: all 0.2s ease;
@@ -161,7 +148,6 @@
 
         .btn-vote:hover {
             background-color: #6B4F3C;
-            /* bg-b4 */
             color: #eae3df;
         }
 
@@ -197,7 +183,7 @@
 
 <body>
     <nav class="navbargore bg-b5 d-flex justify-content-center align-items-center">
-        <span class="text-b0 fw-bold w-100 text-center">Vote for your favourite bad book of the year &#10148;</span>
+        <span class="text-b0 fw-bold w-100 text-center">Vote below <i class="bi bi-arrow-down"></i></span>
     </nav>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-b5 px-3 shadow">
@@ -206,11 +192,9 @@
             <span class="text-b0 fw-bold">Badreads</span>
         </a>
 
-        <!-- SEARCH -->
         <form class="flex-grow-1 d-flex justify-content-center" role="search">
             <div class="d-flex align-items-center flex-column w-100">
 
-                <!-- Desktop input -->
                 <div class="input-group d-none d-sm-flex w-50">
                     <input class="form-control search-input text-b5" type="search" placeholder="Search"
                         aria-label="Search">
@@ -219,13 +203,11 @@
                     </span>
                 </div>
 
-                <!-- Mobile button -->
                 <button class="btn btn-b3 d-flex d-sm-none mb-1" type="button" data-bs-toggle="collapse"
                     data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
                     <i class="fas fa-search text-b0"></i>
                 </button>
 
-                <!-- Mobile collapse search input -->
                 <div class="collapse w-75" id="mobileSearch">
                     <input class="form-control mt-2" type="search" placeholder="Search" aria-label="Search">
                 </div>
@@ -233,12 +215,10 @@
             </div>
         </form>
 
-        <!-- HAMBURGER (opens offcanvas only on small screens) -->
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- DESKTOP MENU -->
         <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link text-b0 fw-bold" href="home.html">Home</a></li>
@@ -249,7 +229,6 @@
 
     </nav>
 
-    <!-- OFFCANVAS MENU (mobile) -->
     <div class="offcanvas offcanvas-end bg-b5 text-b0" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Menu</h5>
@@ -266,47 +245,43 @@
     </div>
 
     <div class="container-xl py-4">
-        <h2 class="text-b5 fs-1 fw-bold mb-4 text-center">Vote for your favourite bad book</h2>
+        <h2 class="text-b5 fs-1 fw-bold mb-4 text-center">Vote for your favourite bad book of 2025</h2>
 
         <div class="row g-4 justify-content-center">
 
-            <!-- BOOK 1 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="./images/1984.jpg" alt="1984">
+                    <img src="./images/hopeless-9781476743554_hr.jpg" alt="hopeless">
                     <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">1984</h6>
-                        <p class="text-b6 mb-2">George Orwell</p>
+                        <h6 class="fw-bold text-b5 mb-1">Hopeless</h6>
+                        <p class="text-b6 mb-2">Colleen Hoover</p>
                         <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- BOOK 2 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="./images/mp.jpg" alt="Harry Potter">
+                    <img src="./images/27362503.jpg" alt="It Ends With Us">
                     <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">Harry Potter</h6>
-                        <p class="text-b6 mb-2">J.K. Rowling</p>
+                        <h6 class="fw-bold text-b5 mb-1">It Ends With Us</h6>
+                        <p class="text-b6 mb-2">Colleen Hoover</p>
                         <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- BOOK 3 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="./images/kk.jpg" alt="The Book Thief">
+                    <img src="./images/71L5vWJf6JL._AC_UF1000,1000_QL80_.jpg" alt="All Your Perfects">
                     <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">The Book Thief</h6>
-                        <p class="text-b6 mb-2">Markus Zusak</p>
+                        <h6 class="fw-bold text-b5 mb-1">All Your Perfects</h6>
+                        <p class="text-b6 mb-2">Colleen Hoover</p>
                         <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- BOOK 4 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/vp.jpg" alt="The Hobbit">
@@ -318,7 +293,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 5 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/gp.jpg" alt="Pride and Prejudice">
@@ -330,7 +304,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 6 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/ubiesh.jpg" alt="Mockingbird">
@@ -342,7 +315,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 7 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/ak.jpg" alt="Catcher">
@@ -354,7 +326,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 8 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/it.jpg" alt="Gatsby">
@@ -366,7 +337,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 9 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/sm.png" alt="Moby Dick">
@@ -378,7 +348,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 10 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/al.jpg" alt="War and Peace">
@@ -390,7 +359,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 11 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/fr.jpg" alt="Frankenstein">
@@ -402,7 +370,6 @@
                 </div>
             </div>
 
-            <!-- BOOK 12 -->
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
                     <img src="./images/dg.jpg" alt="Dorian Gray">
