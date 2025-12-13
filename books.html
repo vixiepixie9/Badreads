@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books - Badreads</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    </noscript>
+
+    <meta name="description" content="Badreads - vote for your favourite bad book of the year.">
 
     <style>
         .bg-b0 {
@@ -251,7 +263,7 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/hopeless.webp" alt="hopeless">
+                    <img src="images/hopeless.webp" alt="Hopeless">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">Hopeless</h6>
                         <p class="text-b6 mb-2">Colleen Hoover</p>
@@ -284,7 +296,7 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/vp.jpg" alt="The Hobbit">
+                    <img src="images/hobbit.webp" alt="The Hobbit">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">The Hobbit</h6>
                         <p class="text-b6 mb-2">J.R.R. Tolkien</p>
@@ -295,7 +307,7 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/gp.jpg" alt="Pride and Prejudice">
+                    <img src="images/gp.webp" alt="Pride and Prejudice">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">Pride & Prejudice</h6>
                         <p class="text-b6 mb-2">Jane Austen</p>
@@ -306,7 +318,7 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/ubiesh.jpg" alt="Mockingbird">
+                    <img src="images/ubiesh.webp" alt="To Kill a Mockingbird">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">To Kill a Mockingbird</h6>
                         <p class="text-b6 mb-2">Harper Lee</p>
@@ -317,43 +329,21 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/ak.jpg" alt="Catcher">
+                    <img src="images/ak.webp" alt="Anna Karenina">
                     <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">Catcher in the Rye</h6>
-                        <p class="text-b6 mb-2">J.D. Salinger</p>
-                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card-book text-center">
-                    <img src="images/it.jpg" alt="Gatsby">
-                    <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">The Great Gatsby</h6>
-                        <p class="text-b6 mb-2">F. Scott Fitzgerald</p>
-                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card-book text-center">
-                    <img src="images/sm.png" alt="Moby Dick">
-                    <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">Moby Dick</h6>
-                        <p class="text-b6 mb-2">Herman Melville</p>
-                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card-book text-center">
-                    <img src="images/al.jpg" alt="War and Peace">
-                    <div class="card-body">
-                        <h6 class="fw-bold text-b5 mb-1">War and Peace</h6>
+                        <h6 class="fw-bold text-b5 mb-1">Anna Karenina</h6>
                         <p class="text-b6 mb-2">Leo Tolstoy</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="images/it.webp" alt="Game of Thrones">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">Game of Thrones</h6>
+                        <p class="text-b6 mb-2">George R. R. Martin</p>
                         <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
                     </div>
                 </div>
@@ -361,7 +351,29 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/fr.jpg" alt="Frankenstein">
+                    <img src="images/sm.webp" alt="The Man and the Sea">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">The Man and the Sea</h6>
+                        <p class="text-b6 mb-2">Ernest Hemingway</p>
+                        <button class="btn bg-b5 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="images/al.webp" alt="The Alchemist">
+                    <div class="card-body">
+                        <h6 class="fw-bold text-b5 mb-1">The Alchemist</h6>
+                        <p class="text-b6 mb-2">Paulo Coelho</p>
+                        <button class="btn bg-b4 text-b0 w-75 custom-btn">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card-book text-center">
+                    <img src="images/fr.webp" alt="Frankenstein">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">Frankenstein</h6>
                         <p class="text-b6 mb-2">Mary Shelley</p>
@@ -372,7 +384,7 @@
 
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card-book text-center">
-                    <img src="images/dg.jpg" alt="Dorian Gray">
+                    <img src="images/dg.webp" alt="Dorian Gray">
                     <div class="card-body">
                         <h6 class="fw-bold text-b5 mb-1">Dorian Gray</h6>
                         <p class="text-b6 mb-2">Oscar Wilde</p>
